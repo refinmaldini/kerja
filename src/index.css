@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: var(--theme-primary, 160 84% 39%); /* Default emerald, overridden by personal theme */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--theme-secondary, 210 40% 96.1%); /* Default gray-100, overridden by personal theme */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: var(--theme-accent, 210 40% 96.1%); /* Default gray-100, overridden by personal theme */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: var(--theme-primary, 160 84% 39%); /* Default emerald, overridden by personal theme */
+
+    --radius: 0.5rem;
+
+    /* Personal theme colors - will be overridden by JavaScript */
+    --theme-primary: 160 84% 39%; /* Default emerald */
+    --theme-secondary: 210 40% 96.1%; /* Default gray-100 */
+    --theme-accent: 160 70% 95%; /* Default emerald-50 */
+
+    /* Extended color palette */
+    --emerald-50: 152 81% 96%;
+    --emerald-100: 149 80% 90%;
+    --emerald-500: 160 84% 39%;
+    --emerald-600: 161 94% 30%;
+    --emerald-700: 163 94% 24%;
+
+    --slate-50: 210 40% 98%;
+    --slate-100: 210 40% 96%;
+    --slate-200: 214 32% 91%;
+    --slate-300: 213 27% 84%;
+    --slate-400: 215 20% 65%;
+    --slate-500: 215 16% 47%;
+    --slate-600: 215 19% 35%;
+    --slate-700: 215 25% 27%;
+    --slate-800: 217 33% 17%;
+    --slate-900: 222 47% 11%;
+
+    --sidebar-background: var(--theme-secondary, 0 0% 98%);
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: var(--theme-primary, 160 84% 39%);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--theme-accent, 160 70% 95%);
+    --sidebar-accent-foreground: var(--theme-primary, 160 84% 30%);
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: var(--theme-primary, 160 84% 39%);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: var(--theme-primary, 160 72% 45%); /* Default emerald in dark mode, overridden by personal theme */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: var(--theme-secondary, 217.2 32.6% 17.5%); /* Default gray-800 in dark mode, overridden by personal theme */
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: var(--theme-accent, 217.2 32.6% 17.5%); /* Default gray-800 in dark mode, overridden by personal theme */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: var(--theme-primary, 160 72% 45%); /* Default emerald in dark mode, overridden by personal theme */
+
+    --theme-primary: 160 72% 45%; /* Default emerald in dark mode */
+    --theme-secondary: 217.2 32.6% 17.5%; /* Default gray-800 in dark mode */
+    --theme-accent: 160 60% 15%; /* Default emerald-800 in dark mode */
+
+    --sidebar-background: var(--theme-secondary, 222.2 84% 4.9%);
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: var(--theme-primary, 160 72% 45%);
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: var(--theme-accent, 160 60% 15%);
+    --sidebar-accent-foreground: var(--theme-primary, 160 72% 60%);
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: var(--theme-primary, 160 72% 45%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: animateIn 0.2s ease-out;
+  }
+
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
