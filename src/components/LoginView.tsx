@@ -111,12 +111,12 @@ export const LoginView: React.FC<LoginViewProps> = ({ users, onLogin, showDefaul
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           
-          {showDefaultInfo && (
+          {/* {showDefaultInfo && (
             <div className="text-center mt-6 p-4 bg-muted rounded-xl border border-border animate-in">
               <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mb-1">{t('defaultLogin')}</p>
               <p className="text-sm font-mono text-foreground">User: <span className="font-bold">admin</span> | Pass: <span className="font-bold">123</span></p>
             </div>
-          )}
+          )} */}
         </form>
       </div>
     </div>
